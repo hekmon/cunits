@@ -11,6 +11,7 @@ fmt.Println(cunits.Kbit)
 fmt.Println(cunits.Kibit)
 fmt.Println(cunits.KB)
 fmt.Println(cunits.KiB)
+fmt.Printf("1000 MiB = %f MB\n", float64(1000)*cunits.MiB/cunits.MB)
 ```
 
 will output:
@@ -20,6 +21,7 @@ will output:
 1024
 8000
 8192
+1000 MiB = 1048.576000 MB
 ```
 
 ## Custom type example
