@@ -5,6 +5,7 @@ import "fmt"
 // Bit represent a size in bit
 type Bit uint64
 
+// String will return the XiB from the most suitable
 func (size Bit) String() string {
 	// if size >= YiB {
 	// 	return size.YiBString()
@@ -56,8 +57,8 @@ func (size Bit) Kbit() float64 {
 	return float64(size) / Kbit
 }
 
-// KBittring returns the size in kilobit with unit suffix
-func (size Bit) KBittring() string {
+// Kbittring returns the size in kilobit with unit suffix
+func (size Bit) Kbittring() string {
 	return fmt.Sprintf("%.2f Kbit", size.Kbit())
 }
 
