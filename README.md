@@ -4,7 +4,7 @@
 
 ComputerUnits allows to manipulate binary and decimal representations of bits and bytes.
 
-## Constants examples
+## Constants example
 
 ```golang
 fmt.Println(cunits.Kbit)
@@ -22,7 +22,7 @@ will output:
 8192
 ```
 
-## Custom type examples
+## Custom type example
 
 ```golang
 size := cunits.Bit(58) * cunits.MiB
@@ -37,7 +37,7 @@ will output:
 0.06 GiB
 ```
 
-## Parsing examples
+## Parsing example
 
 ```golang
 size, err := cunits.Parse("7632 MiB")
