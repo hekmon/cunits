@@ -5,6 +5,48 @@ import "fmt"
 // Bit represent a size in bit
 type Bit uint64
 
+func (size Bit) String() string {
+	// if size >= YiB {
+	// 	return size.YiBString()
+	// }
+	// if size >= ZiB {
+	// 	return size.ZiBString()
+	// }
+	if size >= EiB {
+		return size.EiBString()
+	}
+	if size >= PiB {
+		return size.PiBString()
+	}
+	if size >= TiB {
+		return size.TiBString()
+	}
+	if size >= GiB {
+		return size.GiBString()
+	}
+	if size >= MiB {
+		return size.MiBString()
+	}
+	if size >= KiB {
+		return size.KiBString()
+	}
+	return size.ByteString()
+}
+
+/*
+	In bytes
+*/
+
+// Byte returns the size in byte
+func (size Bit) Byte() float64 {
+	return float64(size) / 8
+}
+
+// ByteString returns the size in byte with unit suffix
+func (size Bit) ByteString() string {
+	return fmt.Sprintf("%.2f byte", size.Byte())
+}
+
 /*
 	Decimal prefix of Bit
 */
