@@ -51,6 +51,46 @@ func (size Bits) Ybit() float64 {
 	Binary prefix of bits
 */
 
+// Kibit returns the size in kibibit
+func (size Bits) Kibit() float64 {
+	return float64(size) / Kibit
+}
+
+// Mibit returns the size in mebibit
+func (size Bits) Mibit() float64 {
+	return float64(size) / Mibit
+}
+
+// Gibit returns the size in gibibit
+func (size Bits) Gibit() float64 {
+	return float64(size) / Gibit
+}
+
+// Tibit returns the size in tebibit
+func (size Bits) Tibit() float64 {
+	return float64(size) / Tibit
+}
+
+// Pibit returns the size in pebibit
+func (size Bits) Pibit() float64 {
+	return float64(size) / Pibit
+}
+
+// Eibit returns the size in exbibit
+func (size Bits) Eibit() float64 {
+	return float64(size) / Eibit
+}
+
+// Zibit returns the size in zebibit
+func (size Bits) Zibit() float64 {
+	return float64(size) / Zibit
+}
+
+// Yibit returns the size in yobibit
+func (size Bits) Yibit() float64 {
+	return float64(size) / Yibit
+}
+
 /*
 	Decimal prefix of bytes
 */
