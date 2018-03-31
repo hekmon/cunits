@@ -180,3 +180,43 @@ func (size Bit) YB() float64 {
 /*
 	Binary prefix of bytes
 */
+
+// KiB returns the size in kibibyte
+func (size Bit) KiB() float64 {
+	return float64(size) / KiB
+}
+
+// MiB returns the size in mebibyte
+func (size Bit) MiB() float64 {
+	return float64(size) / MiB
+}
+
+// GiB returns the size in gibibyte
+func (size Bit) GiB() float64 {
+	return float64(size) / GiB
+}
+
+// TiB returns the size in tebibyte
+func (size Bit) TiB() float64 {
+	return float64(size) / TiB
+}
+
+// PiB returns the size in pebibyte
+func (size Bit) PiB() float64 {
+	return float64(size) / PiB
+}
+
+// EiB returns the size in exbibyte
+func (size Bit) EiB() float64 {
+	return float64(size) / EiB
+}
+
+// ZiB returns the size in zebibyte
+func (size Bit) ZiB() float64 {
+	return float64(size) / ZiB
+}
+
+// YiB returns the size in yobibyte
+func (size Bit) YiB() float64 {
+	return float64(size) / YiB
+}
