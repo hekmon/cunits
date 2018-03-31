@@ -1,5 +1,114 @@
 package cunits
 
+import (
+	"fmt"
+	"regexp"
+	"strconv"
+)
+
+const parseRegex = "^([0-9]+(\\.[0-9]+)?) ?(([KMGTPEZY]i?)?(B|bit))$"
+
+var sizeMatch = regexp.MustCompile(parseRegex)
+
+// Parse parses un string representation of a number with a suffix
+func Parse(sizeSuffix string) (size Bit, err error) {
+	// Does it match ?
+	match := sizeMatch.FindSubmatch([]byte(sizeSuffix))
+	if match == nil {
+		err = fmt.Errorf("string does not match the parsing regex: %s", parseRegex)
+		return
+	}
+	if len(match) < 4 {
+		err = fmt.Errorf("regex matching did not return enough groups")
+		return
+	}
+	// Extract number
+	num, err := strconv.ParseFloat(string(match[1]), 64)
+	if err != nil {
+		err = fmt.Errorf("extracted number '%s' can't be parsed as float64: %v", string(match[1]), err)
+		return
+	}
+	// Findout the unit
+	switch string(match[3]) {
+	case "bit":
+		size = Bit(num)
+	case "B":
+		size = ImportFromByte(num)
+	// Decimal prefix of bits
+	case "Kbit":
+		size = ImportFromKbit(num)
+	case "Mbit":
+		size = ImportFromMbit(num)
+	case "Gbit":
+		size = ImportFromGbit(num)
+	case "Tbit":
+		size = ImportFromTbit(num)
+	case "Pbit":
+		size = ImportFromPbit(num)
+	case "Ebit":
+		size = ImportFromEbit(num)
+	case "Zbit":
+		size = ImportFromZbit(num)
+	case "Ybit":
+		size = ImportFromYbit(num)
+	// Binary prefix of bits
+	case "Kibit":
+		size = ImportFromKibit(num)
+	case "Mibit":
+		size = ImportFromMibit(num)
+	case "Gibit":
+		size = ImportFromGibit(num)
+	case "Tibit":
+		size = ImportFromTibit(num)
+	case "Pibit":
+		size = ImportFromPibit(num)
+	case "Eibit":
+		size = ImportFromEibit(num)
+	case "Zibit":
+		size = ImportFromZibit(num)
+	case "Yibit":
+		size = ImportFromYibit(num)
+	// Decimal prefix of bytes
+	case "KB":
+		size = ImportFromKB(num)
+	case "MB":
+		size = ImportFromMB(num)
+	case "GB":
+		size = ImportFromGB(num)
+	case "TB":
+		size = ImportFromTB(num)
+	case "PB":
+		size = ImportFromPB(num)
+	case "EB":
+		size = ImportFromEB(num)
+	case "ZB":
+		size = ImportFromZB(num)
+	case "YB":
+		size = ImportFromYB(num)
+	// Binary prefix of bytes
+	case "KiB":
+		size = ImportFromKiB(num)
+	case "MiB":
+		size = ImportFromMiB(num)
+	case "GiB":
+		size = ImportFromGiB(num)
+	case "TiB":
+		size = ImportFromTiB(num)
+	case "PiB":
+		size = ImportFromPiB(num)
+	case "EiB":
+		size = ImportFromEiB(num)
+	case "ZiB":
+		size = ImportFromZiB(num)
+	case "YiB":
+		size = ImportFromYiB(num)
+	// or not
+	default:
+		err = fmt.Errorf("extracted unit '%s' is unknown", string(match[3]))
+	}
+	return
+}
+
 // ImportFromByte imports a size in byte
 func ImportFromByte(sizeInByte float64) Bit {
 	return Bit(sizeInByte * Byte)
