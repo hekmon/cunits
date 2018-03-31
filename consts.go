@@ -14,9 +14,9 @@ const (
 	Pbit = 1000000000000000
 	// Ebit represents an exabit
 	Ebit = 1000000000000000000
-	// Zbit represents a zettabit
+	// Zbit represents a zettabit (overflows int64)
 	Zbit = 1000000000000000000000
-	// Ybit represents a yottabit
+	// Ybit represents a yottabit (overflows int64)
 	Ybit = 1000000000000000000000000
 )
 
@@ -34,9 +34,9 @@ const (
 	Pibit = 1 << 50
 	// Eibit represents an exbibit
 	Eibit = 1 << 60
-	// Zibit represents a zebibit
+	// Zibit represents a zebibit (overflows int64)
 	Zibit = 1 << 70
-	// Yibit represents a yobibit
+	// Yibit represents a yobibit (overflows int64)
 	Yibit = 1 << 80
 )
 
@@ -54,9 +54,9 @@ const (
 	PB = Pbit * 8
 	// EB represents an exabyte
 	EB = Ebit * 8
-	// ZB represents a zettabyte
+	// ZB represents a zettabyte (overflows int64)
 	ZB = Zbit * 8
-	// YB represents a yottabyte
+	// YB represents a yottabyte (overflows int64)
 	YB = Ybit * 8
 )
 
@@ -72,10 +72,10 @@ const (
 	TiB = Tibit * 8
 	// PiB represents a pebibyte
 	PiB = Pibit * 8
-	// EiB represents an exbibyte
+	// EiB represents an exbibyte (overflows int64)
 	EiB = Eibit * 8
-	// ZiB represents a zebibyte
+	// ZiB represents a zebibyte (overflows int64)
 	ZiB = Zbit * 8
-	// YiB represents a yobibyte
+	// YiB represents a yobibyte (overflows int64)
 	YiB = Ybit * 8
 )
