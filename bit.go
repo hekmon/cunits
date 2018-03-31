@@ -5,7 +5,7 @@ import "fmt"
 // Bit represent a size in bit
 type Bit uint64
 
-// String will return the XiB from the most suitable
+// String will return the size in bytes with the most suitable binary prefix
 func (size Bit) String() string {
 	// if size >= YiB {
 	// 	return size.YiBString()
