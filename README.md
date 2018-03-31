@@ -46,7 +46,7 @@ if err != nil {
 }
 fmt.Println(size)
 fmt.Println(size.KiB())
-fmt.Println(size.Kbittring())
+fmt.Println(size.KbitString())
 ```
 
 will output:
