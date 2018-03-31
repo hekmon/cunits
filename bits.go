@@ -116,9 +116,9 @@ func (size Bit) Zbit() float64 {
 	return float64(size) / Zbit
 }
 
-// ZBittring returns the size in zettabit with unit suffix
+// ZBittring returns the size in zettabit with unit suffix (carefull with sub zeros !)
 func (size Bit) ZBittring() string {
-	return fmt.Sprintf("%.2f Zbit", size.Zbit())
+	return fmt.Sprintf("%f Zbit", size.Zbit())
 }
 
 // Ybit returns the size in yottabit
@@ -126,9 +126,9 @@ func (size Bit) Ybit() float64 {
 	return float64(size) / Ybit
 }
 
-// YBittring returns the size in yottabit with unit suffix
+// YBittring returns the size in yottabit with unit suffix (carefull with sub zeros !)
 func (size Bit) YBittring() string {
-	return fmt.Sprintf("%.2f Ybit", size.Ybit())
+	return fmt.Sprintf("%f Ybit", size.Ybit())
 }
 
 /*
@@ -200,9 +200,9 @@ func (size Bit) Zibit() float64 {
 	return float64(size) / Zibit
 }
 
-// ZibitString returns the size in zebibit with unit suffix
+// ZibitString returns the size in zebibit with unit suffix (carefull with sub zeros !)
 func (size Bit) ZibitString() string {
-	return fmt.Sprintf("%.2f Zibit", size.Zibit())
+	return fmt.Sprintf("%f Zibit", size.Zibit())
 }
 
 // Yibit returns the size in yobibit
@@ -210,9 +210,9 @@ func (size Bit) Yibit() float64 {
 	return float64(size) / Yibit
 }
 
-// YibitString returns the size in yobibit with unit suffix
+// YibitString returns the size in yobibit with unit suffix (carefull with sub zeros !)
 func (size Bit) YibitString() string {
-	return fmt.Sprintf("%.2f Yibit", size.Yibit())
+	return fmt.Sprintf("%f Yibit", size.Yibit())
 }
 
 /*
@@ -284,9 +284,9 @@ func (size Bit) ZB() float64 {
 	return float64(size) / ZB
 }
 
-// ZBString returns the size in zettabyte with unit suffix
+// ZBString returns the size in zettabyte with unit suffix (carefull with sub zeros !)
 func (size Bit) ZBString() string {
-	return fmt.Sprintf("%.2f ZB", size.ZB())
+	return fmt.Sprintf("%f ZB", size.ZB())
 }
 
 // YB returns the size in yottabyte
@@ -294,9 +294,9 @@ func (size Bit) YB() float64 {
 	return float64(size) / YB
 }
 
-// YBString returns the size in yottabyte with unit suffix
+// YBString returns the size in yottabyte with unit suffix (carefull with sub zeros !)
 func (size Bit) YBString() string {
-	return fmt.Sprintf("%.2f YB", size.YB())
+	return fmt.Sprintf("%f YB", size.YB())
 }
 
 /*
@@ -358,9 +358,9 @@ func (size Bit) EiB() float64 {
 	return float64(size) / EiB
 }
 
-// EiBString returns the size in exbibyte with unit suffix
+// EiBString returns the size in exbibyte with unit suffix (carefull with sub zeros !)
 func (size Bit) EiBString() string {
-	return fmt.Sprintf("%.2f EiB", size.EiB())
+	return fmt.Sprintf("%f EiB", size.EiB())
 }
 
 // ZiB returns the size in zebibyte
@@ -368,9 +368,9 @@ func (size Bit) ZiB() float64 {
 	return float64(size) / ZiB
 }
 
-// ZiBString returns the size in zebibyte with unit suffix
+// ZiBString returns the size in zebibyte with unit suffix (carefull with sub zeros !)
 func (size Bit) ZiBString() string {
-	return fmt.Sprintf("%.2f ZiB", size.ZiB())
+	return fmt.Sprintf("%f ZiB", size.ZiB())
 }
 
 // YiB returns the size in yobibyte
@@ -378,7 +378,7 @@ func (size Bit) YiB() float64 {
 	return float64(size) / YiB
 }
 
-// YiBString returns the size in yobibyte with unit suffix
+// YiBString returns the size in yobibyte with unit suffix (carefull with sub zeros !)
 func (size Bit) YiBString() string {
-	return fmt.Sprintf("%.2f YiB", size.YiB())
+	return fmt.Sprintf("%f YiB", size.YiB())
 }
