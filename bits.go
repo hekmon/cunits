@@ -137,6 +137,46 @@ func (size Bit) Yibit() float64 {
 	Decimal prefix of bytes
 */
 
+// KB returns the size in kilobyte
+func (size Bit) KB() float64 {
+	return float64(size) / KB
+}
+
+// MB returns the size in megabyte
+func (size Bit) MB() float64 {
+	return float64(size) / MB
+}
+
+// GB returns the size in gigabyte
+func (size Bit) GB() float64 {
+	return float64(size) / GB
+}
+
+// TB returns the size in terabyte
+func (size Bit) TB() float64 {
+	return float64(size) / TB
+}
+
+// PB returns the size in petabyte
+func (size Bit) PB() float64 {
+	return float64(size) / PB
+}
+
+// EB returns the size in exabyte
+func (size Bit) EB() float64 {
+	return float64(size) / EB
+}
+
+// ZB returns the size in zettabyte
+func (size Bit) ZB() float64 {
+	return float64(size) / ZB
+}
+
+// YB returns the size in yottabyte
+func (size Bit) YB() float64 {
+	return float64(size) / YB
+}
+
 /*
 	Binary prefix of bytes
 */
