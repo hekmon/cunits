@@ -5,8 +5,13 @@ import "fmt"
 // Bit represent a size in bit
 type Bit uint64
 
-// String will return the size in bytes with the most suitable binary prefix
+// String allows direct reprensetation of Bit by calling GetHumanSizeRepresentation()
 func (size Bit) String() string {
+	return size.GetHumanSizeRepresentation()
+}
+
+// GetHumanSizeRepresentation returns the size in a human readable binary prefix of bytes format
+func (size Bit) GetHumanSizeRepresentation() string {
 	// if size >= YiB {
 	// 	return size.YiBString()
 	// }
@@ -34,9 +39,43 @@ func (size Bit) String() string {
 	return size.ByteString()
 }
 
+// GetHumanSpeedRepsentation returns the size in a human readable decimal prefix of bits format
+func (size Bit) GetHumanSpeedRepsentation() string {
+	// if size >= Ybit {
+	// 	return size.YbitString()
+	// }
+	// if size >= Zbit {
+	// 	return size.ZbitString()
+	// }
+	if size >= Ebit {
+		return size.EbitString()
+	}
+	if size >= Pbit {
+		return size.PbitString()
+	}
+	if size >= Tbit {
+		return size.TbitString()
+	}
+	if size >= Gbit {
+		return size.GbitString()
+	}
+	if size >= Mbit {
+		return size.MbitString()
+	}
+	if size >= Kbit {
+		return size.KbitString()
+	}
+	return size.BitString()
+}
+
 /*
-	In bytes
+	Base forms
 */
+
+// BitString returns the size in bit with unit suffix
+func (size Bit) BitString() string {
+	return fmt.Sprintf("%d bit", size)
+}
 
 // Byte returns the size in byte
 func (size Bit) Byte() float64 {
