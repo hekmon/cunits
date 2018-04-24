@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"regexp"
 	"strconv"
+	"strings"
 )
 
-const parseRegex = "^([0-9]+(\\.[0-9]+)?) ?(([KMGTPEZY]i?)?(B|bit))$"
+const parseRegex = "^([0-9,]+(\\.[0-9]+)?) ?(([KMGTPEZY]i?)?(B|bit))$"
 
 var sizeMatch = regexp.MustCompile(parseRegex)
 
@@ -23,7 +24,7 @@ func Parse(sizeSuffix string) (size Bit, err error) {
 		return
 	}
 	// Extract number
-	num, err := strconv.ParseFloat(string(match[1]), 64)
+	num, err := strconv.ParseFloat(strings.Replace(string(match[1]), ",", "", -1), 64)
 	if err != nil {
 		err = fmt.Errorf("extracted number '%s' can't be parsed as float64: %v", string(match[1]), err)
 		return
