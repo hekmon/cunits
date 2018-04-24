@@ -39,8 +39,8 @@ func (size Bit) GetHumanSizeRepresentation() string {
 	return size.ByteString()
 }
 
-// GetHumanSpeedRepsentation returns the size in a human readable decimal prefix of bits format
-func (size Bit) GetHumanSpeedRepsentation() string {
+// GetHumanSpeedRepresentation returns the size in a human readable decimal prefix of bits format
+func (size Bit) GetHumanSpeedRepresentation() string {
 	// if size >= Ybit {
 	// 	return size.YbitString()
 	// }
