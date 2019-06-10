@@ -84,7 +84,7 @@ func (size Bits) Byte() float64 {
 
 // ByteString returns the size in byte with unit suffix
 func (size Bits) ByteString() string {
-	return fmt.Sprintf("%.2f byte", size.Byte())
+	return fmt.Sprintf("%.2f B", size.Byte())
 }
 
 /*
