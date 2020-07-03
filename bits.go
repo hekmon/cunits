@@ -10,6 +10,29 @@ func (size Bits) String() string {
 	return size.GetHumanSizeRepresentation()
 }
 
+// GetHumanSizeAndSuffix returns the size in a human readable binary prefix of bytes format and the suffix
+func (size Bits) GetHumanSizeAndSuffix() (float64, string) {
+	if size >= EiB {
+		return size.EiB(), "EiB"
+	}
+	if size >= PiB {
+		return size.PiB(), "PiB"
+	}
+	if size >= TiB {
+		return size.TiB(), "TiB"
+	}
+	if size >= GiB {
+		return size.GiB(), "GiB"
+	}
+	if size >= MiB {
+		return size.MiB(), "MiB"
+	}
+	if size >= KiB {
+		return size.KiB(), "KiB"
+	}
+	return size.Byte(), "B"
+}
+
 // GetHumanSizeRepresentation returns the size in a human readable binary prefix of bytes format
 func (size Bits) GetHumanSizeRepresentation() string {
 	// if size >= YiB {
@@ -37,6 +60,29 @@ func (size Bits) GetHumanSizeRepresentation() string {
 		return size.KiBString()
 	}
 	return size.ByteString()
+}
+
+// GetHumanSizeAndSuffix returns the size in a human readable binary prefix of bytes format and the suffix
+func (size Bits) GetHumanSpeedAndSuffix() (float64, string) {
+	if size >= EiB {
+		return size.Ebit(), "Eb"
+	}
+	if size >= PiB {
+		return size.Pbit(), "Pb"
+	}
+	if size >= TiB {
+		return size.Tbit(), "Tb"
+	}
+	if size >= GiB {
+		return size.Gbit(), "Gb"
+	}
+	if size >= MiB {
+		return size.Mbit(), "Mb"
+	}
+	if size >= KiB {
+		return size.Kbit(), "Kb"
+	}
+	return float64(size), "b"
 }
 
 // GetHumanSpeedRepresentation returns the size in a human readable decimal prefix of bits format
