@@ -10,7 +10,9 @@ ComputerUnits allows to manipulate binary and decimal representations of bits an
 go get -u github.com/hekmon/cunits/v2
 ```
 
-## Constants example
+## Usage
+
+### Constants example
 
 ```golang
 fmt.Println(cunits.Kbit)
@@ -22,7 +24,7 @@ fmt.Printf("1000 MiB = %f MB\n", float64(1000)*cunits.MiB/cunits.MB)
 
 will output:
 
-```
+```text
 1000
 1024
 8000
@@ -30,7 +32,7 @@ will output:
 1000 MiB = 1048.576000 MB
 ```
 
-## Custom type example
+### Custom type example
 
 ```golang
 size := cunits.Bit(58) * cunits.MiB
@@ -40,12 +42,12 @@ fmt.Println(size.GiBString())
 
 will output:
 
-```
+```text
 486.539264
 0.06 GiB
 ```
 
-## Parsing example
+### Parsing example
 
 ```golang
 size, err := cunits.Parse("7632 MiB")
@@ -59,7 +61,7 @@ fmt.Println(size.KbitString())
 
 will output:
 
-```
+```text
 7.45 GiB
 7.815168e+06
 64021856.26 Kbit
