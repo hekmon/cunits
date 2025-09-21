@@ -1,6 +1,6 @@
 package cunits
 
-// Byte represent a byte
+// Byte represent the number of bits a byte contains
 const Byte = 8
 
 // Decimal prefix of bits
@@ -8,19 +8,19 @@ const (
 	// Kbit represents a kilobit
 	Kbit = 1000
 	// Mbit represents a megabit
-	Mbit = 1000000
+	Mbit = 1_000_000
 	// Gbit represents a gigabit
-	Gbit = 1000000000
+	Gbit = 1_000_000_000
 	// Tbit represents a terabit
-	Tbit = 1000000000000
+	Tbit = 1_000_000_000_000
 	// Pbit represents a petabit
-	Pbit = 1000000000000000
+	Pbit = 1_000_000_000_000_000
 	// Ebit represents an exabit
-	Ebit = 1000000000000000000
+	Ebit = 1_000_000_000_000_000_000
 	// Zbit represents a zettabit (overflows int64)
-	Zbit = 1000000000000000000000
+	Zbit = 1_000_000_000_000_000_000_000
 	// Ybit represents a yottabit (overflows int64)
-	Ybit = 1000000000000000000000000
+	Ybit = 1_000_000_000_000_000_000_000_000
 )
 
 // Binary prefix of bits
