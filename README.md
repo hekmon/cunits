@@ -1,6 +1,6 @@
 # ComputerUnits
 
-[![GoDoc](https://godoc.org/github.com/hekmon/cunits?status.svg)](https://godoc.org/github.com/hekmon/cunits)
+[![Go Reference](https://pkg.go.dev/badge/github.com/hekmon/cunits/v2.svg)](https://pkg.go.dev/github.com/hekmon/cunits/v2)
 
 ComputerUnits allows to manipulate binary and decimal representations of bits and bytes.
 
