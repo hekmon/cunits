@@ -4,6 +4,12 @@
 
 ComputerUnits allows to manipulate binary and decimal representations of bits and bytes.
 
+## Installation
+
+```bash
+go get -u github.com/hekmon/cunits/v2
+```
+
 ## Constants example
 
 ```golang
