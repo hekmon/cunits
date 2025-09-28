@@ -15,8 +15,8 @@ go get -u github.com/hekmon/cunits/v2
 ### Constants example
 
 ```golang
-fmt.Println(cunits.Kbit)
-fmt.Println(cunits.Kibit)
+fmt.Println(cunits.Kb)
+fmt.Println(cunits.Kib)
 fmt.Println(cunits.KB)
 fmt.Println(cunits.KiB)
 fmt.Printf("1000 MiB = %f MB\n", float64(1000)*cunits.MiB/cunits.MB)
@@ -35,8 +35,8 @@ will output:
 ### Custom type example
 
 ```golang
-size := cunits.Bit(58) * cunits.MiB
-fmt.Println(size.Mbit())
+size := cunits.Bits(58) * cunits.MiB
+fmt.Println(size.Mb())
 fmt.Println(size.GiBString())
 ```
 
@@ -56,7 +56,7 @@ if err != nil {
 }
 fmt.Println(size)
 fmt.Println(size.KiB())
-fmt.Println(size.KbitString())
+fmt.Println(size.KbString())
 ```
 
 will output:
