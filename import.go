@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-const parseRegex = "^([0-9,]+(\\.[0-9]+)?) ?(([KMGTPEZY]i?)?(B|bit))$"
+const parseRegex = "^([0-9,]+(\\.[0-9]+)?) ?(([KMGTPEZY]i?)?(B|b))$"
 
 var sizeMatch = regexp.MustCompile(parseRegex)
 
@@ -31,44 +31,44 @@ func Parse(sizeSuffix string) (size Bits, err error) {
 	}
 	// Findout the unit
 	switch string(match[3]) {
-	case "bit":
+	case "b":
 		size = Bits(num)
 	case "B":
-		size = ImportInByte(num)
+		size = ImportInBytes(num)
 	// Decimal prefix of bits
-	case "Kbit":
-		size = ImportInKbit(num)
-	case "Mbit":
-		size = ImportInMbit(num)
-	case "Gbit":
-		size = ImportInGbit(num)
-	case "Tbit":
-		size = ImportInTbit(num)
-	case "Pbit":
-		size = ImportInPbit(num)
-	case "Ebit":
-		size = ImportInEbit(num)
-	case "Zbit":
-		size = ImportInZbit(num)
-	case "Ybit":
-		size = ImportInYbit(num)
+	case "Kb":
+		size = ImportInKb(num)
+	case "Mb":
+		size = ImportInMb(num)
+	case "Gb":
+		size = ImportInGb(num)
+	case "Tb":
+		size = ImportInTb(num)
+	case "Pb":
+		size = ImportInPb(num)
+	case "Eb":
+		size = ImportInEb(num)
+	case "Zb":
+		size = ImportInZb(num)
+	case "Yb":
+		size = ImportInYb(num)
 	// Binary prefix of bits
-	case "Kibit":
-		size = ImportInKibit(num)
-	case "Mibit":
-		size = ImportInMibit(num)
-	case "Gibit":
-		size = ImportInGibit(num)
-	case "Tibit":
-		size = ImportInTibit(num)
-	case "Pibit":
-		size = ImportInPibit(num)
-	case "Eibit":
-		size = ImportInEibit(num)
-	case "Zibit":
-		size = ImportInZibit(num)
-	case "Yibit":
-		size = ImportInYibit(num)
+	case "Kib":
+		size = ImportInKib(num)
+	case "Mib":
+		size = ImportInMib(num)
+	case "Gib":
+		size = ImportInGib(num)
+	case "Tib":
+		size = ImportInTib(num)
+	case "Pib":
+		size = ImportInPib(num)
+	case "Eib":
+		size = ImportInEib(num)
+	case "Zib":
+		size = ImportInZib(num)
+	case "Yib":
+		size = ImportInYib(num)
 	// Decimal prefix of bytes
 	case "KB":
 		size = ImportInKB(num)
@@ -111,96 +111,96 @@ func Parse(sizeSuffix string) (size Bits, err error) {
 }
 
 // ImportInByte imports a number in byte
-func ImportInByte(sizeInByte float64) Bits {
-	return Bits(sizeInByte * Byte)
+func ImportInBytes(sizeInBytes float64) Bits {
+	return Bits(sizeInBytes * Byte)
 }
 
 /*
 	Decimal prefix of bits
 */
 
-// ImportInKbit imports a number in kilobit
-func ImportInKbit(sizeInKbit float64) Bits {
-	return Bits(sizeInKbit * Kbit)
+// ImportInKb imports a number in kilobit
+func ImportInKb(sizeInKb float64) Bits {
+	return Bits(sizeInKb * Kb)
 }
 
 // ImportInMbit imports a number in megabit
-func ImportInMbit(sizeInMbit float64) Bits {
-	return Bits(sizeInMbit * Mbit)
+func ImportInMb(sizeInMb float64) Bits {
+	return Bits(sizeInMb * Mb)
 }
 
 // ImportInGbit imports a number in gigabit
-func ImportInGbit(sizeInGbit float64) Bits {
-	return Bits(sizeInGbit * Gbit)
+func ImportInGb(sizeInGb float64) Bits {
+	return Bits(sizeInGb * Gb)
 }
 
-// ImportInTbit imports a number in terabit
-func ImportInTbit(sizeInTbit float64) Bits {
-	return Bits(sizeInTbit * Tbit)
+// ImportInTb imports a number in terabit
+func ImportInTb(sizeInTb float64) Bits {
+	return Bits(sizeInTb * Tb)
 }
 
-// ImportInPbit imports a number in petabit
-func ImportInPbit(sizeInPbit float64) Bits {
-	return Bits(sizeInPbit * Pbit)
+// ImportInPb imports a number in petabit
+func ImportInPb(sizeInPb float64) Bits {
+	return Bits(sizeInPb * Pb)
 }
 
-// ImportInEbit imports a number in exabit
-func ImportInEbit(sizeInEbit float64) Bits {
-	return Bits(sizeInEbit * Ebit)
+// ImportInEb imports a number in exabit
+func ImportInEb(sizeInEb float64) Bits {
+	return Bits(sizeInEb * Eb)
 }
 
-// ImportInZbit imports a number in zettabit (sizeInZbit better < 1)
-func ImportInZbit(sizeInZbit float64) Bits {
-	return Bits(sizeInZbit * Zbit)
+// ImportInZb imports a number in zettabit (sizeInZbit better < 1)
+func ImportInZb(sizeInZb float64) Bits {
+	return Bits(sizeInZb * Zb)
 }
 
-// ImportInYbit imports a number in yottabit (sizeInYbit better < 1)
-func ImportInYbit(sizeInYbit float64) Bits {
-	return Bits(sizeInYbit * Ybit)
+// ImportInYb imports a number in yottabit (sizeInYbit better < 1)
+func ImportInYb(sizeInYb float64) Bits {
+	return Bits(sizeInYb * Yb)
 }
 
 /*
 	Binary prefix of bits
 */
 
-// ImportInKibit imports a number in kibibit
-func ImportInKibit(sizeInKibit float64) Bits {
-	return Bits(sizeInKibit * Kibit)
+// ImportInKib imports a number in kibibit
+func ImportInKib(sizeInKib float64) Bits {
+	return Bits(sizeInKib * Kib)
 }
 
-// ImportInMibit imports a number in mebibit
-func ImportInMibit(sizeInMibit float64) Bits {
-	return Bits(sizeInMibit * Mibit)
+// ImportInMib imports a number in mebibit
+func ImportInMib(sizeInMib float64) Bits {
+	return Bits(sizeInMib * Mib)
 }
 
-// ImportInGibit imports a number in gibibit
-func ImportInGibit(sizeInGibit float64) Bits {
-	return Bits(sizeInGibit * Gibit)
+// ImportInGib imports a number in gibibit
+func ImportInGib(sizeInGib float64) Bits {
+	return Bits(sizeInGib * Gib)
 }
 
-// ImportInTibit imports a number in tebibit
-func ImportInTibit(sizeInTibit float64) Bits {
-	return Bits(sizeInTibit * Tibit)
+// ImportInTib imports a number in tebibit
+func ImportInTib(sizeInTib float64) Bits {
+	return Bits(sizeInTib * Tib)
 }
 
-// ImportInPibit imports a number in pebibit
-func ImportInPibit(sizeInPibit float64) Bits {
-	return Bits(sizeInPibit * Pibit)
+// ImportInPib imports a number in pebibit
+func ImportInPib(sizeInPib float64) Bits {
+	return Bits(sizeInPib * Pib)
 }
 
-// ImportInEibit imports a number in exbibit
-func ImportInEibit(sizeInEibit float64) Bits {
-	return Bits(sizeInEibit * Eibit)
+// ImportInEib imports a number in exbibit
+func ImportInEib(sizeInEib float64) Bits {
+	return Bits(sizeInEib * Eib)
 }
 
-// ImportInZibit imports a number in zebibit (sizeInZibit better < 1)
-func ImportInZibit(sizeInZibit float64) Bits {
-	return Bits(sizeInZibit * Zibit)
+// ImportInZib imports a number in zebibit (sizeInZibit better < 1)
+func ImportInZib(sizeInZib float64) Bits {
+	return Bits(sizeInZib * Zib)
 }
 
-// ImportInYibit imports a number in yobibit (sizeInYibit better < 1)
-func ImportInYibit(sizeInYibit float64) Bits {
-	return Bits(sizeInYibit * Yibit)
+// ImportInYib imports a number in yobibit (sizeInYibit better < 1)
+func ImportInYib(sizeInYib float64) Bits {
+	return Bits(sizeInYib * Yib)
 }
 
 /*
@@ -251,42 +251,42 @@ func ImportInYB(sizeInYB float64) Bits {
 	Binary prefix of bytes
 */
 
-// ImportInKiB imports a number in kilobyte
+// ImportInKiB imports a number in kibibyte
 func ImportInKiB(sizeInKiB float64) Bits {
 	return Bits(sizeInKiB * KiB)
 }
 
-// ImportInMiB imports a number in megabyte
+// ImportInMiB imports a number in mebibyte
 func ImportInMiB(sizeInMiB float64) Bits {
 	return Bits(sizeInMiB * MiB)
 }
 
-// ImportInGiB imports a number in gigabyte
+// ImportInGiB imports a number in gibibyte
 func ImportInGiB(sizeInGiB float64) Bits {
 	return Bits(sizeInGiB * GiB)
 }
 
-// ImportInTiB imports a number in terabyte
+// ImportInTiB imports a number in tebibyte
 func ImportInTiB(sizeInTiB float64) Bits {
 	return Bits(sizeInTiB * TiB)
 }
 
-// ImportInPiB imports a number in petabyte
+// ImportInPiB imports a number in pebibyte
 func ImportInPiB(sizeInPiB float64) Bits {
 	return Bits(sizeInPiB * PiB)
 }
 
-// ImportInEiB imports a number in exabyte (sizeInEiB better < 1)
+// ImportInEiB imports a number in exbibyte (sizeInEiB better < 1)
 func ImportInEiB(sizeInEiB float64) Bits {
 	return Bits(sizeInEiB * EiB)
 }
 
-// ImportInZiB imports a number in zettabyte (sizeInZiB better < 1)
+// ImportInZiB imports a number in zebibyte (sizeInZiB better < 1)
 func ImportInZiB(sizeInZiB float64) Bits {
 	return Bits(sizeInZiB * ZiB)
 }
 
-// ImportInYiB imports a number in yottabyte (sizeInYiB better < 1)
+// ImportInYiB imports a number in yobibyte (sizeInYiB better < 1)
 func ImportInYiB(sizeInYiB float64) Bits {
 	return Bits(sizeInYiB * YiB)
 }
