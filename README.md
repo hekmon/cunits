@@ -1,13 +1,13 @@
 # ComputerUnits
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/hekmon/cunits/v2.svg)](https://pkg.go.dev/github.com/hekmon/cunits/v2)
+[![Go Reference](https://pkg.go.dev/badge/github.com/hekmon/cunits/v3.svg)](https://pkg.go.dev/github.com/hekmon/cunits/v3)
 
 ComputerUnits allows to manipulate binary and decimal representations of bits and bytes.
 
 ## Installation
 
 ```bash
-go get -u github.com/hekmon/cunits/v2
+go get -u github.com/hekmon/cunits/v3
 ```
 
 ## Usage
